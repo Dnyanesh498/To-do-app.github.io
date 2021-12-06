@@ -1,0 +1,107 @@
+<html>
+
+<head>
+    <title>
+
+        <%= tittle %>
+
+    </title>
+    <!-- bootstrap link -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--  link forfont awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <link rel="stylesheet" href="./style.css" </head>
+    <script src=" https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <body>
+        <section class="box">
+            <h1 align="center">TO-DO APP</h1>
+
+            <!-- create task -->
+            <form action="/create-activity" method="POST">
+
+                <table class="table">
+                    <thead>
+                        <tr class="table">
+                            <th>TASK</th>
+                            <th>CATEGORY</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+
+
+                    <tbody>
+                        <tr>
+                            <td> <input type="text" name="description" placeholder="What's your next task?" required></input>
+                            </td>
+                            <td> <select name="category" required>
+
+                        
+                        
+                        <option>SCHOOL</option>
+                        <option>WORK</option>
+                        <option>PERSONAL</option>
+                        <option>CLEANING</option>
+                        <option>OTHER</option>
+                            </table>
+                            <table class="table">
+                        </select>
+                            </td>
+                            <td><input type="date" id="date" name="date" required></td>
+                            <td><input type="submit" style="font-size: 15px; padding: 2px 5px; border-radius: 10px;" class="btn btn-success" id="add" value="ADD ACTIVITY"></td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+            </form>
+        </section>
+        <div class="TASK-List">
+            <h1 align="center">TASK-LIST</h1>
+
+            <form action="/delete-activity" method="GET">
+                <table class="table">
+                    <thead class="list-heading">
+                        <tr>
+                            <th style="border-radius: 20px 0px 0px 20px;">SELECT</th>
+                            <th>TASK</th>
+                            <th>CATEGORY</th>
+                            <th style="border-radius: 0px 20px 20px 0px;">Date <i class="fas fa-bell" style="font-size: 20px;"></i></th>
+
+                        </tr>
+                    </thead>
+                    <% for(let i of activity) { %>
+
+                        <!--second container-->
+                        <tr class="list">
+
+                            <td style="border-radius: 20px 0px 0px 20px;"> <input type="checkbox" name="<%= i._id %>"></td>
+                            <td>
+                                <p id="task-description">
+                                    <%= i.description %>
+                            </td>
+                            <td>
+                                <p id="task-category"></p>
+                                <%= i.category %>
+                            </td>
+                            <td style="border-radius: 0px 20px 20px 0px;">
+                                <p id="task-date"></p>
+                                <%= i.date %>
+                            </td>
+                        </tr>
+
+                        <% } %>
+
+
+
+
+                </table>
+                <div align="center"><input type="submit" style="font-size: 15px; padding: 2px 5px; border-radius: 10px;" class="btn btn-danger" value="DELETE ">
+                </div>></form>
+
+
+        </div>
+    </body>
+
+</html>

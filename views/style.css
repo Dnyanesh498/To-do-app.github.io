@@ -1,0 +1,118 @@
+/* for whole conatiner */
+
+* {
+    margin: 10px;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: serif;
+}
+
+
+/* root tag for all element */
+
+html {
+    font-size: 50%;
+}
+
+
+/* main body part */
+
+body {
+    margin: 20px;
+    background-color: rgb(148, 140, 140);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* h1 style */
+
+h1 {
+    font-size: 5rem;
+    font-weight: italic;
+}
+
+ul {
+    list-style: georgian;
+}
+
+input[type="text"] {
+    font-size: 1.5rem;
+    background: transparent;
+    border: none;
+    outline: none;
+    width: 50%;
+}
+
+
+/* styling all label  */
+
+label {
+    display: block;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+}
+
+
+/* box styling */
+
+.box {
+    background-color: rgb(119, 72, 146);
+    border-radius: 50px;
+    width: 50%;
+    height: 50%;
+    margin: 0 auto;
+    box-shadow: -1px -1px 6px 8px #b4a6a6;
+}
+
+.box h1 {
+    text-align: center;
+}
+
+.table {
+    background-color: darkturquoise;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+/* select for all */
+
+select {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+.TASK-LIST {
+    width: 50%;
+    height: 30%;
+    background-color: rgb(110, 175, 175);
+    margin-top: 20px;
+    border-radius: 50px;
+    box-shadow: -1px -1px 6px 8px #26413e;
+}
+
+.list-heading {
+    background-color: rgb(79, 226, 111);
+    font-size: 20px;
+    border: transparent;
+}
+
+.list {
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    background-color: rgb(46, 61, 70);
+    border-bottom: 2px solid rgb(172, 177, 172);
+}
+
+.list:hover {
+    background-color: rgb(22, 206, 84);
+    color: black;
+    border-bottom: 2px solid red;
+}
